@@ -17,6 +17,10 @@ const taskSchema = mongoose.Schema({
         type: String,
         enum: ["complete", "incomplete"],
         required: true
+    },
+    email: {
+        type: String,
+        required: true
     }
 })
 

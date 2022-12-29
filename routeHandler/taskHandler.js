@@ -82,6 +82,7 @@ router.put("/", async (req, res) => {
     }
 })
 
+// edit a task
 router.put("/edit/:id", async (req, res) => {
     try {
         const id = req.params.id

@@ -22,6 +22,23 @@ router.get("/", async (req, res) => {
     }
 })
 
+// get a task
+router.get("/edit/:id", async (req, res) => {
+    try {
+        const result = await Task.findOne({ _id: req.params.id })
+        res.send({
+            status: true,
+            message: "Succesfully got a task",
+            data: result
+        })
+    } catch (err) {
+        res.send({
+            status: false,
+            message: "There was a server side error while finding a task"
+        })
+    }
+})
+
 // Insert a task
 router.post("/", async (req, res) => {
     try {
